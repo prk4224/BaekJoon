@@ -25,6 +25,7 @@ public class DateStructure02_04 {
             }
             stack.push(i);
         }
+
         while (!stack.empty()){
             arr[stack.pop()] = -1;
         }
