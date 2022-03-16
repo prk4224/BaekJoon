@@ -45,7 +45,7 @@ public class Baek_j_17299 {
                 cut[stack.pop()] = -1;
             }
             else {
-
+                System.out.println(1);
             }
         }
 
