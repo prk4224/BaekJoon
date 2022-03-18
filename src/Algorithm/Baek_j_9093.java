@@ -3,7 +3,7 @@ package Algorithm;
 import java.util.Scanner;
 import java.util.StringTokenizer;
 
-public class DateStructure01_02 {
+public class Baek_j_9093 {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         StringBuilder sb = new StringBuilder();

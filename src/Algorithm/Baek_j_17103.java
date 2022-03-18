@@ -4,7 +4,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-public class Math03_04 {
+public class Baek_j_17103 {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringBuilder sb = new StringBuilder();
@@ -32,3 +32,4 @@ public class Math03_04 {
         return true;
     }
 }
+// 시간 초과

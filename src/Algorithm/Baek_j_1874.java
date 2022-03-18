@@ -3,7 +3,7 @@ package Algorithm;
 import java.util.Scanner;
 import java.util.Stack;
 
-public class DateStructure01_04 {
+public class Baek_j_1874 {
     public static StringBuilder sb = new StringBuilder();
     public static void main(String[] args){
         Scanner in = new Scanner(System.in);

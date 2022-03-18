@@ -2,7 +2,7 @@ package Algorithm;
 
 import java.util.Scanner;
 
-public class Math01_08 {
+public class Baek_j_1676 {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
 

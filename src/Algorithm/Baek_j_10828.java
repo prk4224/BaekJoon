@@ -2,7 +2,7 @@ package Algorithm;
 
 import java.util.Scanner;
 
-public class DateStructure01_01 {
+public class Baek_j_10828 {
     public static Scanner in = new Scanner(System.in);
     public static StringBuilder sb = new StringBuilder();
     public static void main(String[] args){
