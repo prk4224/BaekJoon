@@ -2,7 +2,7 @@ package Algorithm;
 
 import java.io.*;
 
-public class Back_j_1212 {
+public class Baek_j_1212 {
     public static StringBuilder sb = new StringBuilder();
     public static void main(String[] args) throws IOException{
 

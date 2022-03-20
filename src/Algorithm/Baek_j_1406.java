@@ -4,7 +4,7 @@ import java.io.*;
 import java.util.LinkedList;
 import java.util.ListIterator;
 
-public class Baej_j_1406 {
+public class Baek_j_1406 {
     public static void main(String[] args) throws IOException {
 
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
