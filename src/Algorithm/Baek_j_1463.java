@@ -1,21 +1,27 @@
 package Algorithm;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
+import java.io.*;
 import java.util.StringTokenizer;
 
 public class Baek_j_1463 {
     public static void main(String[] args) throws IOException {
 
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        StringTokenizer st = new StringTokenizer(br.readLine());
+        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 
-        int N = Integer.parseInt(st.nextToken());
+        int N = Integer.parseInt(br.readLine());
+        br.close();
 
+        bw.write(recur(N,0) +"");
+        bw.flush();
+        bw.close();
 
-
-
+    }
+    public static int recur(int N, int cut){
+        if(N < 2){
+            return cut;
+        }
+        return Math.min(recur(N/2, cut+1+(N%2)), recur(N/3, cut+1+(N%3)));
     }
 
 }
