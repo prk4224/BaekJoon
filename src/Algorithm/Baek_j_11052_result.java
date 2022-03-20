@@ -3,7 +3,7 @@ package Algorithm;
 import java.io.*;
 import java.util.StringTokenizer;
 
-public class Beak_j_11052_result {
+public class Baek_j_11052_result {
     public static void main(String[] args) throws IOException{
 
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
