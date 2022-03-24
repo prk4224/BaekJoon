@@ -22,7 +22,7 @@ public class Baek_j_1149 {
                 dp[i][j] = Integer.parseInt(st.nextToken());
             }
         }
-
+        br.close();
 
 
         for(int i = 2; i <= N; i++){

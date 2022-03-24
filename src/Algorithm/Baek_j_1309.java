@@ -10,6 +10,7 @@ public class Baek_j_1309 {
 
         int N = Integer.parseInt(br.readLine());
          // 사자의 최대 마리수
+        br.close();
 
         long dp[] = new long[N+1];
         dp[0] = 1;
