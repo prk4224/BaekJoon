@@ -19,9 +19,6 @@ public class Baek_j_2667 {
         N = Integer.parseInt(br.readLine());
 
         map = new int[N+1][N+1];
-//        for(int i = 0; i < N+1; i++){
-//            Arrays.fill(map[i],0);
-//        }
 
         for(int i = 0; i < N; i++){
             String str = br.readLine();
