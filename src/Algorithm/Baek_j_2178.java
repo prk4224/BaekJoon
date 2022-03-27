@@ -9,6 +9,7 @@ import java.util.StringTokenizer;
 
 public class Baek_j_2178 {
     public static int map[][];
+    // 방향 vector 정의
     public static int dx[] = {-1,1,0,0};
     public static int dy[] = {0,0,-1,1};
     public static int N;
