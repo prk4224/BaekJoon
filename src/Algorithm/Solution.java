@@ -19,7 +19,7 @@ public class Solution {
         System.out.println(answer);
     }
 
-    public static boolean dfs(int x, boolean visited[] ,int computers[][]) {
+    public static void dfs(int x, boolean visited[] ,int computers[][]) {
         visited[x] = true;
 
         for (int i = 0; i < computers[x].length; i++) {
@@ -27,8 +27,6 @@ public class Solution {
                 dfs(i,visited,computers);
             }
         }
-        return true;
-
     }
 }
 
