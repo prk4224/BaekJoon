@@ -1,19 +1,18 @@
 package Algorithm;
 
 import java.io.*;
-import java.util.*;
+import java.util.Arrays;
+import java.util.StringTokenizer;
 
-public class Baek_j_15654 {
-
-    public static int N;
-    public static int M;
+public class Baek_j_15655 {
     public static boolean vi[];
     public static int arr[];
+    public static int N;
+    public static int M;
     public static int input[];
     public static StringBuilder sb = new StringBuilder();
 
-    public static void main(String[] args) throws IOException{
-
+    public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
         StringTokenizer st = new StringTokenizer(br.readLine());
@@ -27,32 +26,34 @@ public class Baek_j_15654 {
             input[i] = Integer.parseInt(st1.nextToken());
         }
 
-        br.close();
         Arrays.sort(input);
         vi = new boolean[N];
-        arr = new int[M];
+        arr = new int[M+1];
 
-        dfs(0);
+        dfs(1);
+
         bw.write(sb+"");
         bw.flush();
         bw.close();
 
     }
+    public static void dfs(int d){
 
-    public static void dfs(int dep){
 
-        if(dep == M){
-            for(int var : arr){
-                sb.append(var).append(" ");
+        if( M+1 == d ){
+            for(int i = 1;  i< arr.length; i++){
+                sb.append(arr[i]).append(" ");
             }
             sb.append('\n');
             return;
         }
+
         for(int i = 0; i < N; i++){
-            if(!vi[i]){
+
+            if(!vi[i] && arr[d-1] < input[i]){
                 vi[i] = true;
-                arr[dep] = input[i];
-                dfs(dep+1);
+                arr[d] = input[i];
+                dfs(d+1);
                 vi[i] = false;
             }
         }
