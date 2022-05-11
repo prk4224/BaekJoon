@@ -22,7 +22,6 @@ public class Baek_j_15651 {
         arr = new int[M];
 
         dfs(0);
-
         bw.write(sb +"");
         bw.flush();
         bw.close();
