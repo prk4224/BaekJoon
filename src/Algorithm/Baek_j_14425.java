@@ -14,7 +14,10 @@ public class Baek_j_14425 {
         int N = Integer.parseInt(st.nextToken());
         int M = Integer.parseInt(st.nextToken());
 
+        // 집합 S를 담을 문자열
         String[] strArr = new String[N];
+
+        // 집합 S에 포함되어있는지 검사해야한 문자열
         String[] checkArr = new String[M];
 
         for(int i = 0; i < N; i++){
@@ -25,6 +28,7 @@ public class Baek_j_14425 {
             checkArr[i] = br.readLine();
         }
 
+        // 이중 for 문을 통해서 문자열을 비교 같으면 count 값을 증가 시킨다.
         for(int i = 0 ; i < M; i++){
             for(int j = 0; j < N; j++){
                 if(strArr[j].equals(checkArr[i])){
