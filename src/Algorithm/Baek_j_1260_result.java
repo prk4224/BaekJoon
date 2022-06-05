@@ -19,17 +19,15 @@ public class Baek_j_1260_result {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine());
 
-         input = new int[3];
+        // 0, 노드갯수 1, 연결 갯수 2, 시작 노드
+        input = new int[3];
 
         for(int i = 0; i < 3; i++){
             input[i] = Integer.parseInt(st.nextToken());
         }
-        map = new int[input[0]+1][input[0]+1];
+        map = new int[input[0]][input[0]];
 
-        // 모든 배열 0으로 초기화
-        for(int i =0; i < input[0]+1; i++){
-            Arrays.fill(map[i],0);
-        }
+
 
         for(int i = 0; i < input[1]; i++){
             st = new StringTokenizer(br.readLine());
@@ -39,19 +37,21 @@ public class Baek_j_1260_result {
             map[a][b] = 1;
             map[b][a] = 1;
         }
-        visited = new boolean[input[0]+1];
+        br.close();
 
-        dfs(input[2]);
+        visited = new boolean[input[0]];
+
+        dfs(input[2]-1);
         System.out.println();
         Arrays.fill(visited, false);
-        bfs(input[2]);
+        bfs(input[2]-1);
     }
 
     public static void dfs(int start){
         visited[start]  = true;
         System.out.print(start+ " ");
 
-        for(int i = 1; i < input[0]+1; i++){
+        for(int i = 0; i < input[0]; i++){
 
             if(map[start][i] ==1 && !visited[i]){
                 visited[i] = true;
@@ -69,7 +69,7 @@ public class Baek_j_1260_result {
             int x = q.poll();
             System.out.print(x + " ");
 
-            for(int i = 1; i < input[0]+1; i++){
+            for(int i = 0; i < input[0]; i++){
 
                 if(map[x][i] == 1 && !visited[i]){
                     visited[i] = true;
