@@ -28,6 +28,7 @@ public class Baek_j_2667 {
         }
 
         cut = new int[626];
+
         for(int i = 1; i < N+1; i++){
             for(int j = 1; j < N+1; j++){
                 if(dfs(i,j)){
