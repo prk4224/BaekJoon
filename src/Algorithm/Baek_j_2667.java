@@ -8,9 +8,12 @@ import java.util.Arrays;
 public class Baek_j_2667 {
 
     public static int map[][];
-    public static boolean visited[];
     public static int N;
+
+    // 단지 내에있는 집 수
     public static int cut[];
+
+    // 단지의 수
     public static int result = 0;
 
     public static void main(String[] args) throws IOException{
@@ -27,25 +30,29 @@ public class Baek_j_2667 {
             }
         }
 
+        // 단지가 몇개 인지 모르기 때문에 최대값으로 크기 설정
         cut = new int[626];
 
+        // 모든 위치에서 dfs 진행
         for(int i = 1; i < N+1; i++){
             for(int j = 1; j < N+1; j++){
+                // 값이 true면 방문하지 않은 단지
                 if(dfs(i,j)){
                     result++;
                 }
             }
         }
-        int cut_1[] = new int[result];
+        int hCut[] = new int[result];
 
         for(int i = 0; i < result; i++){
-            cut_1[i] = cut[i];
+            hCut[i] = cut[i];
         }
-        Arrays.sort(cut_1);
+
+        Arrays.sort(hCut);
 
         System.out.println(result);
-        for(int i = 0; i < cut_1.length; i++){
-            System.out.println(cut_1[i]);
+        for(int i = 0; i < hCut.length; i++){
+            System.out.println(hCut[i]);
         }
     }
 
@@ -56,13 +63,16 @@ public class Baek_j_2667 {
         }
 
         if(map[x][y] == 1){
+            // 방문처리
             map[x][y] = 0;
+            //해당 단지에 집의 수 증가
             cut[result]++;
 
             dfs(x-1,y);
             dfs(x+1, y);
             dfs(x,y-1);
             dfs(x,y+1);
+
             return true;
         }
         return false;

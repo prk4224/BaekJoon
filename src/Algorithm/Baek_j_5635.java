@@ -7,16 +7,20 @@ import java.util.StringTokenizer;
 
 public class Baek_j_5635 {
 
+    public static String[] name;
+    public static int[][] age;
+
     public static int[] minAge;
     public static int[] maxAge;
-    public static int[][] age;
+    public static String minName;
+    public static String maxName;
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
         int N = Integer.parseInt(br.readLine());
 
-        String[] name = new String[N];
+        name = new String[N];
         age = new int[N][3];
 
         for(int i = 0; i < N; i++){
@@ -26,69 +30,46 @@ public class Baek_j_5635 {
             age[i][1] = Integer.parseInt(st.nextToken());
             age[i][0] = Integer.parseInt(st.nextToken());
         }
+        br.close();
 
         minAge = age[0];
         maxAge = age[0];
-        String minName = name[0];
-        String maxName = name[0];
+        minName = name[0];
+        maxName = name[0];
 
         for(int i = 1; i < N; i++){
-
-            if(minCheck(i,0)){
-                minName = name[i];
-            }
-            else if (minAge[0] == age[i][0]){
-
-                if( minCheck(i,1)){
-                    minName = name[i];
-                }
-                else if(minAge[1] == age[i][1]){
-                    if( minCheck(i,2)){
-                        minName = name[i];
-                    }
-                }
-
-            }
-
-
-            if(maxCheck(i,0)){
-                maxName = name[i];
-            }
-            else if (maxAge[0] == age[i][0]){
-
-                if( maxCheck(i,1)){
-                    maxName = name[i];
-                }
-                else if(maxAge[1] == age[i][1]){
-                    if( maxCheck(i,2)){
-                        maxName = name[i];
-                    }
-                }
-
-            }
+            minCheck(i,0);
+            maxCheck(i,0);
         }
-
-        System.out.println(minName);
-        System.out.println(maxName);
+        System.out.print(minName + '\n' + maxName);
     }
 
-    public static boolean minCheck(int i, int x){
+    public static void minCheck(int i, int x){
+
+        // 태어난 날이 전부 다르다는 조건있으므로 필요없는 문장
+        if(x > 2) return;
 
         if(minAge[x] < age[i][x]){
             minAge = age[i];
-            return true;
+            minName = name[i];
+        }
+        else if(minAge[x] == age[i][x]){
+            // 연도가 같다면 월 비교 -> 월이 같다면 일 비교
+            minCheck(i,x+1);
         }
 
-        return false;
     }
 
-    public static boolean maxCheck(int i, int x){
+    public static void maxCheck(int i, int x){
+
+        if(x > 2) return;
 
         if(maxAge[x] > age[i][x]){
             maxAge = age[i];
-            return true;
+            maxName = name[i];
         }
-
-        return false;
+        else if(maxAge[x] == age[i][x]){
+            maxCheck(i,x+1);
+        }
     }
 }
