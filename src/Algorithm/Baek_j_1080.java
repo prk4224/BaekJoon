@@ -45,8 +45,16 @@ public class Baek_j_1080 {
         }
 
         // 해당 자리 값을 비교했을때 바르면 트레이드를 진행한다.
-        for(int i = 0; i < N-2; i++){
-            for(int j = 0; j < M-2; j++){
+        for(int i = 0; i < N; i++){
+            for(int j = 0; j < M; j++){
+                // 비교가는 행령의 위치가 N-3 이상이면 트레이드가 이루워 지지 않기 때문에 값만 비교해서 다르면 -1 출력
+                if(i >= N-2 || j >= M-2){
+                    if(strArr[i].charAt(j) != targetArr[i].charAt(j)){
+                        System.out.print(-1);
+                        return;
+                    }
+
+                }
                 if(strArr[i].charAt(j) != targetArr[i].charAt(j)){
                     change(i,j);
                     result++;
@@ -54,19 +62,11 @@ public class Baek_j_1080 {
             }
         }
 
-        // 비교가는 행령의 위치가 3 보다 작으면 트레이드가 이루워 지지 않기 때문에 3 이하의 값 아
-        for(int i = 0; i < 3; i++) {
-            for (int j = 0; j < 3; j++) {
-                if (strArr[N-i-1].charAt(M-j-1) != targetArr[N-i-1].charAt(M-j-1)) {
-                    System.out.print(-1);
-                    return;
-                }
-            }
-        }
+
         System.out.print(result);
     }
 
-    // 3x3 행령 만큼 바꾸는 함수
+    // 3x3 행렬 만큼 바꾸는 함수
     public static void change(int N, int M){
 
         for(int i = 0 ; i < 3; i++){
