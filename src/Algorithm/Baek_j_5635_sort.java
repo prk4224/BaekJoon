@@ -21,7 +21,7 @@ public class Baek_j_5635_sort {
             int month = Integer.parseInt(st.nextToken());
             int year = Integer.parseInt(st.nextToken());
 
-            nameAge[i][1] = String.valueOf(((year-1990) *365) + (month*30) + day);
+            nameAge[i][1] = String.valueOf(((year-1990) *372) + (month*31) + day);
 
         }
 
@@ -32,6 +32,7 @@ public class Baek_j_5635_sort {
             }
         });
 
+        // 일수가 클수록 나이가 적다
         System.out.print( nameAge[N-1][0] + '\n' + nameAge[0][0] );
     }
 }
