@@ -13,7 +13,7 @@ public class Baek_j_1072 {
         long gameCnt = Integer.parseInt(st.nextToken());
         long winCnt = Integer.parseInt(st.nextToken());
 
-        long target = winCnt*100/gameCnt;
+        long target = winCnt*100/gameCnt ;
 
 
         if(target >= 99){
@@ -46,6 +46,7 @@ public class Baek_j_1072 {
                 break;
             }
         }
+        System.out.println(target);
         System.out.print(cnt);
     }
 }
