@@ -25,10 +25,8 @@ public class Baek_j_2012 {
 
 
         for(int i = 0; i < N; i++){
-            // 원래 등수와 다를 경우 예상등수의 차이만큼을 최소값에 더해준다.
-            if(expectationRank[i] != rank[i]){
-                min += Math.abs(expectationRank[i]-rank[i]);
-            }
+            // 차이 나는 등수 만큼 최소값에 더해준다.
+            min += Math.abs(expectationRank[i]-rank[i]);
         }
 
         System.out.print(min);
