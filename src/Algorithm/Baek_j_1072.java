@@ -19,6 +19,7 @@ public class Baek_j_1072 {
         if(target >= 99){
             System.out.print(-1);
         }
+        // 이분 탑색
         else {
             long start = 0;
             long end = 1_000_000_000;
@@ -36,6 +37,8 @@ public class Baek_j_1072 {
             System.out.println(end);
         }
 
+
+        // 반복문 풀이
         long cnt = 0;
 
         while(true){

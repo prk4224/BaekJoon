@@ -16,7 +16,7 @@ public class Baek_j_1302 {
             book[i] = br.readLine();
         }
 
-        // 많이 팔린 책의 수가 같은경우에 사전순으로 출력하기 위해 정력
+        // 많이 팔린 책의 수가 같은경우에 사전순으로 출력하기 위해 정렬
         Arrays.sort(book);
 
         //초기 값 세팅
