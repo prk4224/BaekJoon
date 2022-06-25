@@ -28,10 +28,12 @@ public class Baek_j_1302 {
             //이전 값과 같은 문자면 cnt값 증가
             if(book[i].equals(book[i-1])){
                 cnt++;
+
                 // 마지막 문자열에서 같은 경우에 maxCnt 보다 크면 MaxBook 재정의
                 if(maxCnt < cnt && i == N-1){
                     maxBook = book[i];
                 }
+
             }
             else{
                 // maxCnt 보다 cnt값이 클경우 maxBook, maxCnt 값 재정의 한후 cnt 값 초기화

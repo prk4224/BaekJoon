@@ -9,8 +9,6 @@ import java.util.Stack;
 import java.util.StringTokenizer;
 
 public class Baek_j_14235 {
-
-
     public static void main(String[] args) throws IOException{
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
@@ -30,11 +28,13 @@ public class Baek_j_14235 {
             if(check != 0){
 
                 for(int j = 0; j < check; j++){
+
                     int pv = Integer.parseInt(st.nextToken());
                     que.add(pv);
                 }
             }
             else {
+
                 if(que.isEmpty()) sb.append(-1).append('\n');
                 else sb.append(que.poll()).append('\n');
             }

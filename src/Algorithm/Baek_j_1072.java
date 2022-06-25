@@ -49,7 +49,7 @@ public class Baek_j_1072 {
                 break;
             }
         }
-        System.out.println(target);
+
         System.out.print(cnt);
     }
 }
