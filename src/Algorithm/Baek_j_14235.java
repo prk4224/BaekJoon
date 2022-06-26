@@ -5,13 +5,12 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Collections;
 import java.util.PriorityQueue;
-import java.util.Stack;
 import java.util.StringTokenizer;
 
 public class Baek_j_14235 {
     public static void main(String[] args) throws IOException{
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         PriorityQueue<Integer> que = new PriorityQueue<>(Collections.reverseOrder());
 
         StringBuilder sb = new StringBuilder();

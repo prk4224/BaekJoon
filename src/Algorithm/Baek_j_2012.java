@@ -25,7 +25,7 @@ public class Baek_j_2012 {
 
 
         for(int i = 0; i < N; i++){
-            // 차이 나는 등수 만큼 최소값에 더해준다.
+            // 차이 나는 등수 만큼 최소값에 더해준다.x
             min += Math.abs(expectationRank[i]-rank[i]);
         }
 
