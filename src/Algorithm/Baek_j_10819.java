@@ -23,13 +23,13 @@ public class Baek_j_10819 {
             input[i] = Integer.parseInt(st.nextToken());
         }
 
-        dt(0,0,0);
+        bt(0,0,0);
 
         System.out.println(max);
 
     }
     // dep : 깊이. prev : 이전 값을 넣는 변수, sum : 총 합계
-    public static void dt(int dep, int prev, int sum){
+    public static void bt(int dep, int prev, int sum){
 
         if(dep == N){
             max = Math.max(max,sum);
@@ -39,7 +39,7 @@ public class Baek_j_10819 {
             if(!vi[i]){
                 vi[i] = true;
                 // 깊이 증가, 현재값, 깊이가 0일 때는 합계가 없으므로 0, 1이상일때는 이전 값과 현재 값을 빼서 합계랑 더함.
-                dt(dep+1, input[i], dep == 0 ? 0: sum + Math.abs(input[i]-prev));
+                bt(dep+1, input[i], dep == 0 ? 0: sum + Math.abs(input[i]-prev));
                 vi[i] = false;
 
             }
