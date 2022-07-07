@@ -6,10 +6,11 @@ import java.io.InputStreamReader;
 import java.util.*;
 
 public class Baek_j_18352 {
+    public static ArrayList<ArrayList<Integer>> input = new ArrayList<>();
     public static int map[][];
     public static boolean vi[];
     public static int N;
-    public static ArrayList<Integer> result = new ArrayList<>();
+    public static int de[];
     public static void main(String[] args) throws IOException{
 
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -25,27 +26,34 @@ public class Baek_j_18352 {
 
         map = new int[N+1][N+1];
         vi = new boolean[N+1];
+        de = new int[N+1];
+
+        // 연결리스트에 노드 추가
+        for(int i=0;i<=N;i++) {
+            input.add(new ArrayList<Integer>());
+        }
 
         for(int i = 0; i < M; i++){
             st = new StringTokenizer(br.readLine());
             int tempA = Integer.parseInt(st.nextToken());
             int tempB = Integer.parseInt(st.nextToken());
+            input.get(tempA).add(tempB);
             map[tempA][tempB] = 1;
             map[tempB][tempA] = 1;
         }
 
-        bfs(0,target,start);
-        Collections.sort(result);
-        int size = result.size();
-        for(int i = 0; i < size; i++){
-            System.out.println(result.get(i));
+        bfs(target,start);
+
+        for(int i = 1; i <= N; i++){
+            if(de[i] == target) {
+                System.out.println(i);
+            }
         }
 
 
 
-
     }
-    public static void bfs(int dep, int target, int start){
+    public static void bfs(int target, int start){
 
         vi[start] = true;
         Queue<Integer> que = new LinkedList<>();
@@ -53,19 +61,18 @@ public class Baek_j_18352 {
         que.add(start);
 
         while(!que.isEmpty()){
-
             int newStart = que.poll();
-
 
 
             for(int i = 1; i <= N; i++){
                 if(!vi[i] && map[newStart][i] == 1){
-                    if(dep == target-1) result.add(i);
+
+                    de[i] = de[newStart]+1;
                     vi[i] = true;
+
                     que.add(i);
                 }
             }
-            dep++;
         }
     }
 }
