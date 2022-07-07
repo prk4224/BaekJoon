@@ -7,7 +7,6 @@ import java.util.*;
 
 public class Baek_j_18352 {
     public static ArrayList<ArrayList<Integer>> input = new ArrayList<>();
-    public static int map[][];
     public static boolean vi[];
     public static int N;
     public static int de[];
@@ -24,7 +23,6 @@ public class Baek_j_18352 {
         // 출발 도시
         int start = Integer.parseInt(st.nextToken());
 
-        map = new int[N+1][N+1];
         vi = new boolean[N+1];
         de = new int[N+1];
 
@@ -38,22 +36,23 @@ public class Baek_j_18352 {
             int tempA = Integer.parseInt(st.nextToken());
             int tempB = Integer.parseInt(st.nextToken());
             input.get(tempA).add(tempB);
-            map[tempA][tempB] = 1;
-            map[tempB][tempA] = 1;
         }
 
-        bfs(target,start);
+        bfs(start);
 
+        boolean check = false;
         for(int i = 1; i <= N; i++){
             if(de[i] == target) {
                 System.out.println(i);
+                check = true;
             }
         }
+        if(!check) System.out.println(-1);
 
 
 
     }
-    public static void bfs(int target, int start){
+    public static void bfs(int start){
 
         vi[start] = true;
         Queue<Integer> que = new LinkedList<>();
@@ -63,14 +62,14 @@ public class Baek_j_18352 {
         while(!que.isEmpty()){
             int newStart = que.poll();
 
+            for(int i = 0; i < input.get(newStart).size(); i++){
 
-            for(int i = 1; i <= N; i++){
-                if(!vi[i] && map[newStart][i] == 1){
+                int nextNode = input.get(newStart).get(i);
+                if(!vi[nextNode]) {
+                    de[nextNode] = de[newStart]+1;
+                    vi[nextNode] = true;
 
-                    de[i] = de[newStart]+1;
-                    vi[i] = true;
-
-                    que.add(i);
+                    que.add(nextNode);
                 }
             }
         }
