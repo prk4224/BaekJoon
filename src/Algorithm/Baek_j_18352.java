@@ -24,6 +24,7 @@ public class Baek_j_18352 {
         int start = Integer.parseInt(st.nextToken());
 
         vi = new boolean[N+1];
+        // 해당 도시까지의 길이를 담는 배열
         de = new int[N+1];
 
         // 연결리스트에 노드 추가
@@ -60,13 +61,13 @@ public class Baek_j_18352 {
         que.add(start);
 
         while(!que.isEmpty()){
-            int newStart = que.poll();
+            int nowNode = que.poll();
 
-            for(int i = 0; i < input.get(newStart).size(); i++){
+            for(int i = 0; i < input.get(nowNode).size(); i++){
 
-                int nextNode = input.get(newStart).get(i);
+                int nextNode = input.get(nowNode).get(i);
                 if(!vi[nextNode]) {
-                    de[nextNode] = de[newStart]+1;
+                    de[nextNode] = de[nowNode]+1;
                     vi[nextNode] = true;
 
                     que.add(nextNode);

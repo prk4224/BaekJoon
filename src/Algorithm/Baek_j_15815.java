@@ -15,32 +15,48 @@ public class Baek_j_15815 {
         int result = 0;
         int cnt = 0;
         Stack<Integer> stack = new Stack<>();
+        String str = "";
 
         for(int i = 0; i < quest.length(); i++){
+            // 숫자면 스택에 담는다.
             if(quest.charAt(i) >= '0' && quest.charAt(i) <= '9'){
-                stack.push(quest.charAt(i) - '0');
+                stack.push( (quest.charAt(i) - '0'));
             }
             else {
-                if (cnt == 0) {
-                    int num_1 = stack.pop();
-                    int num_2 = stack.pop();
-                    result = operator(num_2, num_1, quest.charAt(i));
-                    cnt++;
-                }
-                else {
-                    int num = stack.pop();
-                    result = operator(num, result, quest.charAt(i));
-                }
-//            else {
-//                int num1 = stack.pop();
-//                int num2 = stack.pop();
-//                result = operator(num2,num1,quest.charAt(i));
-//                stack.push(result)
-//            }
-              }
+//                str += quest.charAt(i);
+                // 부호가 나오면 스택에 들어있는 두 수를 꺼내와 연산 후 결과 값을 다시 스택에 담는다.
+                int num1 = stack.pop();
+                int num2 = stack.pop();
+                result = operator(num2,num1,quest.charAt(i));
+                System.out.println(result);
+                stack.push(result);
+            }
+//           else {
+//                if (cnt == 0) {
+//                    int num_1 = stack.pop();
+//                    int num_2 = stack.pop();
+//                    result = operator(num_2, num_1, quest.charAt(i));
+//                    cnt++;
+//                }
+//                else {
+//                    int num = stack.pop();
+//                    result = operator(num, result, quest.charAt(i));
+//                }
+//             }
 
-            System.out.println(result);
         }
+//        System.out.println(str);
+//
+//        for(int i = 0; i < str.length(); i++){
+//
+//            // 부호가 나오면 스택에 들어있는 두 수를 꺼내와 연산 후 결과 값을 다시 스택에 담는다.
+//            long num1 = stack.pop();
+//            long num2 = stack.pop();
+//            result = operator(num2,num1,str.charAt(i));
+//            stack.push(result);
+//
+//        }
+
 
         System.out.println(result);
 
