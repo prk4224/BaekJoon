@@ -42,6 +42,10 @@ public class Baek_j_1389 {
             return;
         }
 
+        for(int i = 0; i < N; i++){
+
+        }
+
 
     }
 }
