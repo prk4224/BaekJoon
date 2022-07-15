@@ -43,7 +43,9 @@ public class Baek_j_1389 {
         }
 
         for(int i = 0; i < N; i++){
-
+            if(i == 0){
+                break;
+            }
         }
 
 
