@@ -35,6 +35,9 @@ public class Baek_j_1389 {
 
         }
 
+
+
+
     }
     public static void dfs(int start, int dep){
 
@@ -43,8 +46,11 @@ public class Baek_j_1389 {
         }
 
         for(int i = 0; i < N; i++){
-            if(i == 0){
-                break;
+            if(!vi[i] && input[start][i] == 1) {
+                vi[i] = true;
+                cnt++;
+                dfs(i,dep+1);
+
             }
         }
 

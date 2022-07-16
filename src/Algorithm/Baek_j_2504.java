@@ -15,22 +15,19 @@ public class Baek_j_2504 {
         int result = 0;
 
         for(int i = 0; i < input.length(); i++){
+
             if(input.charAt(i) == '(' || input.charAt(i) == '['){
                 stack.push(input.charAt(i));
             }
-            else if(input.charAt(i) == ')'){
 
-                if(stack.empty()) {
+            else  if(input.charAt(i) == ')') {
+                if(stack.empty()){
                     System.out.println(0);
                     return;
                 }
+                else{
 
-                while (true){
-                    char ch = stack.pop();
-
-                    if(ch == '(')
                 }
-
             }
         }
 
