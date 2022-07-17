@@ -26,6 +26,8 @@ public class Baek_j_11656 {
             sb.append(result).append('\n');
         }
 
+
+
         System.out.print(sb);
 
     }
