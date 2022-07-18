@@ -3,10 +3,12 @@ package Algorithm;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.Stack;
 import java.util.StringTokenizer;
 
 public class Baek_j_2491 {
-    public static void main() throws IOException{
+    public static void main(String[] args) throws IOException {
+
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
         int N = Integer.parseInt(br.readLine());
@@ -18,6 +20,30 @@ public class Baek_j_2491 {
             input[i] = Integer.parseInt(st.nextToken());
         }
 
+        int maxCnt = 0;
+        int cnt = 1;
+
+        for(int i = 0; i < N; i++){
+            if(i != N-1 && input[i] <= input[i+1]) cnt++;
+            else {
+                maxCnt = Math.max(maxCnt,cnt);
+                cnt = 1;
+            }
+        }
+
+        for(int i = 0; i < N; i++){
+            if(i != N-1 && input[i] >= input[i+1]) cnt++;
+            else {
+                maxCnt = Math.max(maxCnt,cnt);
+                cnt = 1;
+            }
+        }
+
+        System.out.println(maxCnt);
+
 
     }
 }
+
+
+
