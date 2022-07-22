@@ -9,7 +9,7 @@ public class Baek_j_2210 {
     public static void main(String[] args) throws IOException{
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
-        int input[][] = new int[5][5]
+        int input[][] = new int[5][5];
 
         for(int i = 0; i < 5; i++){
             StringTokenizer st = new StringTokenizer(br.readLine());
